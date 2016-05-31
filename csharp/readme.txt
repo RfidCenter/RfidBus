@@ -1,7 +1,6 @@
-﻿I. Представленные примеры
+I. Представленные примеры
 
-1. ComAsClassExample - пример использования COM/Active-X объекта для работы с Шиной RFID в качестве обычного класса .NET.
-
+* ComAsClassExample - пример использования COM/Active-X объекта для работы с Шиной RFID в качестве обычного класса .NET.
 * ObserveRfidTids - пример использования класса RfidBusClient для работы с Шиной RFID.
 * ChangeGpoStates - пример использования класса RfidBusClient для управления состояниями GPO через Шину RFID
 * PrintSgtinTags - пример использования класса RfidBusClient для управления печатью меток через Шину RFID 

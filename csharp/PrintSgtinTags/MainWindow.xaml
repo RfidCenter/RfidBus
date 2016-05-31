@@ -1,0 +1,95 @@
+﻿<Window x:Class="PrintSgtinTags.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"      
+        Title="Печать RFID меток" 
+        Height="350" MaxHeight="350" 
+        MaxWidth="350" Width="350"
+        HorizontalContentAlignment="Left"
+        >
+    <Grid Margin="5">
+        <Grid.RowDefinitions>
+            <RowDefinition MaxHeight="35" />
+            <RowDefinition MaxHeight="35" />
+            <RowDefinition MaxHeight="35" />
+            <RowDefinition MaxHeight="35" />
+            <RowDefinition MaxHeight="35" />
+            <RowDefinition MaxHeight="35" />
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="2*"/>
+        </Grid.ColumnDefinitions>
+
+        <Label Grid.Row="0" Grid.Column="0" 
+               Style="{StaticResource InputControlAlignmentStyle}" 
+               Content="Select Printer"/>
+        
+        <ComboBox Grid.Row="0" Grid.Column="1" 
+                  DisplayMemberPath="Name"
+                  ItemsSource="{Binding LoadedPrinters}"
+                  SelectedItem="{Binding SelectedPrinter}"
+                  Style="{StaticResource InputControlAlignmentStyle}"
+                  HorizontalAlignment="Stretch" />
+
+        <Label Grid.Row="1" Grid.Column="0" 
+               Style="{StaticResource InputControlAlignmentStyle}" 
+               Content="Company Prefix"/>
+        
+        <TextBox Grid.Row="1" Grid.Column="1" 
+                 Text="{Binding CompanyPrefix}"
+                 Style="{StaticResource InputControlAlignmentStyle}" 
+                 HorizontalAlignment="Stretch"
+                  />
+
+        <Label Grid.Row="2" Grid.Column="0" 
+               Style="{StaticResource InputControlAlignmentStyle}"
+               Content="Product Id"/>
+
+        <TextBox Grid.Row="2" Grid.Column="1" 
+                 Text="{Binding ProductId}"
+                 Style="{StaticResource InputControlAlignmentStyle}" 
+                 HorizontalAlignment="Stretch"/>
+
+        <Label Grid.Row="3" Grid.Column="0" 
+               Style="{StaticResource InputControlAlignmentStyle}"
+               Content="Start Serial"/>
+        
+        <TextBox Grid.Row="3" Grid.Column="1" 
+                 Text="{Binding StartSerial}"
+                 Style="{StaticResource InputControlAlignmentStyle}" 
+                 HorizontalAlignment="Stretch"/>
+
+        <Label Grid.Row="4" Grid.Column="0" 
+               Style="{StaticResource InputControlAlignmentStyle}"
+               Content="Tags Count"/>
+        
+        <TextBox Grid.Row="4" Grid.Column="1" 
+                 Text="{Binding TagsCount}"
+                 Style="{StaticResource InputControlAlignmentStyle}" 
+                 HorizontalAlignment="Stretch" />
+
+        <CheckBox Grid.Row="5" Grid.Column="1"
+                  Style="{StaticResource InputControlAlignmentStyle}" 
+                  Content="Write EPC data"
+                  IsChecked="{Binding IsWriteEpcData, Mode=TwoWay}"/>
+
+        <Button Grid.Row="6" Grid.Column="0" 
+                Height="40" 
+                Width="100"
+                Command="{Binding ConnectCommand}" 
+                VerticalAlignment="Bottom"
+                HorizontalAlignment="Left"
+                Content="Connect"/>
+
+        <Button Grid.Row="6" Grid.Column="1" 
+                Height="40"
+                Width="100"
+                Command="{Binding PrintCommand}" 
+                VerticalAlignment="Bottom"
+                HorizontalAlignment="Left"
+                Content="Print"/>
+
+    </Grid>
+</Window>

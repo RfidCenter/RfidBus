@@ -1,0 +1,15 @@
+﻿<Application x:Class="PrintSgtinTags.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+
+        <Style x:Key="InputControlAlignmentStyle" TargetType="Control">
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="HorizontalAlignment" Value="Left"/>
+            <Setter Property="HorizontalContentAlignment"  Value="Left"/>
+        </Style>
+        
+    </Application.Resources>
+</Application>

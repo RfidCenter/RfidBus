@@ -38,8 +38,8 @@ namespace RfidBusClientExample
             Console.WriteLine("Establishing connection to RFID Bus...");
             var protocol = new WsCommunicationDescription();
             var config = new ParametersValues(protocol.GetClientConfiguration());
-            config.SetValue(ConfigConstants.PARAMETER_HOST, "127.0.0.1");
-            config.SetValue(ConfigConstants.PARAMETER_PORT, 8080);
+            config.SetValue(ConfigConstants.PARAMETER_HOST, "demo.rfidbus.rfidcenter.ru");
+            config.SetValue(ConfigConstants.PARAMETER_PORT, 80);
 
             this._client = new RfidBusClient(protocol, config)
                            {
@@ -48,7 +48,7 @@ namespace RfidBusClientExample
                            };
             this._client.Connect();
 
-            if (!this._client.Authorize("admin", "admin"))
+            if (!this._client.Authorize("demo", "demo"))
             {
                 throw new Exception("Invalid login-password.");
             }

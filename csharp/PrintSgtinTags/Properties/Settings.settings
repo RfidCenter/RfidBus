@@ -3,16 +3,16 @@
   <Profiles />
   <Settings>
     <Setting Name="BusHost" Type="System.String" Scope="User">
-      <Value Profile="(Default)">127.0.0.1</Value>
+      <Value Profile="(Default)">demo.rfidbus.rfidcenter.ru</Value>
     </Setting>
     <Setting Name="BusPort" Type="System.Int32" Scope="User">
-      <Value Profile="(Default)">8080</Value>
+      <Value Profile="(Default)">80</Value>
     </Setting>
     <Setting Name="BusLogin" Type="System.String" Scope="User">
-      <Value Profile="(Default)">admin</Value>
+      <Value Profile="(Default)">demo</Value>
     </Setting>
     <Setting Name="BusPassword" Type="System.String" Scope="User">
-      <Value Profile="(Default)">admin</Value>
+      <Value Profile="(Default)">demo</Value>
     </Setting>
     <Setting Name="CompanyPrefix" Type="System.UInt64" Scope="User">
       <Value Profile="(Default)">461000232</Value>

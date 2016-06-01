@@ -25,7 +25,7 @@ namespace PrintSgtinTags.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("127.0.0.1")]
+        [global::System.Configuration.DefaultSettingValueAttribute("demo.rfidbus.rfidcenter.ru")]
         public string BusHost {
             get {
                 return ((string)(this["BusHost"]));
@@ -37,7 +37,7 @@ namespace PrintSgtinTags.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("8080")]
+        [global::System.Configuration.DefaultSettingValueAttribute("80")]
         public int BusPort {
             get {
                 return ((int)(this["BusPort"]));
@@ -49,7 +49,7 @@ namespace PrintSgtinTags.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("admin")]
+        [global::System.Configuration.DefaultSettingValueAttribute("demo")]
         public string BusLogin {
             get {
                 return ((string)(this["BusLogin"]));
@@ -61,7 +61,7 @@ namespace PrintSgtinTags.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("admin")]
+        [global::System.Configuration.DefaultSettingValueAttribute("demo")]
         public string BusPassword {
             get {
                 return ((string)(this["BusPassword"]));

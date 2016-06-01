@@ -33,7 +33,7 @@ namespace ComAsClassExample
         {
             Console.WriteLine("Establishing connection to RFID Bus...");
             this._client = new RfidBusComClient();
-            if (!this._client.Connect("127.0.0.1", 8080, "admin", "admin"))
+            if (!this._client.Connect("demo.rfidbus.rfidcenter.ru", 80, "demo", "demo"))
             {
                 throw new Exception("Can't establish connection to RFID Bus.");
             }

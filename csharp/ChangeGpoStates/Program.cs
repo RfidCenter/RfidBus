@@ -53,14 +53,15 @@ namespace ChangeGpoStates
             this._client = new RfidBusClient(protocol, config)
                            {
                                AllowReconnect = true,
-                               RequestTimeOut = TimeSpan.FromSeconds(30),
+//                               RequestTimeOut = TimeSpan.FromSeconds(30),
                            };
             this._client.Connect();
 
             if (!this._client.Authorize("demo", "demo"))
             {
-                throw new Exception("Invalid login-password.");
+                throw new Exception("Invalid login or password.");
             }
+
             Console.WriteLine("Connection established.");
         }
 
@@ -79,35 +80,35 @@ namespace ChangeGpoStates
                 }
 
                 _cancelSource = new CancellationTokenSource();
-                this.ChanchingReadersGpoWork(readersResult.Readers, _cancelSource.Token);
+                this.ChangingReaderGpoWork(readersResult.Readers, _cancelSource.Token);
 
                 WaitForKey("Press ESC to stop.", ConsoleKey.Escape);
                 _cancelSource.Cancel();
             }
         }
 
-        private async void ChanchingReadersGpoWork(IEnumerable<ReaderRecord> readers, CancellationToken token)
+        private async void ChangingReaderGpoWork(IEnumerable<ReaderRecord> readers, CancellationToken token)
         {
-            await Task.Run(() =>
-                           {
-                               var currentState = true;
-                               while (true)
-                               {
-                                   if (token.IsCancellationRequested)
-                                   {
-                                       return;
-                                   }
+            var records = readers as ReaderRecord[] ?? readers.ToArray();
+            await Task.Run(async () =>
+                                 {
+                                     var currentState = true;
+                                     while (true)
+                                     {
+                                         if (token.IsCancellationRequested)
+                                         {
+                                             return;
+                                         }
 
-                                   currentState = !currentState;
-                                   var records = readers as ReaderRecord[] ?? readers.ToArray();
-                                   foreach (var reader in records)
-                                   {
-                                       this.SetReaderGpoStates(reader, currentState);
-                                   }
+                                         currentState = !currentState;
+                                         foreach (var reader in records)
+                                         {
+                                             this.SetReaderGpoStates(reader, currentState);
+                                         }
 
-                                   Thread.Sleep(TIME_INTERVAL_CHANGES);
-                               }
-                           },
+                                         await Task.Delay(TIME_INTERVAL_CHANGES, token);
+                                     }
+                                 },
                            token);
         }
 

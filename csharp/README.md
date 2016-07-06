@@ -12,8 +12,8 @@
 * [Программирование меток](Readers.Write/README.md)
 * [Специализированные команды](Readers.SpecialCommands/README.md)
 * [GPIO](Readers.Gpio/README.md)
-* [Интерфейс мобильных считывателей](Readers.MobileReaderInterface/README.md)
-* [Интерфейс мобильных считывателей на основе изображения](Readers.MobileReaderRasterInterface/README.md)
+* [Интерфейс мобильных считывателей](Readers.MobileReadersInterface/README.md)
+* [Интерфейс мобильных считывателей на основе изображения](Readers.MobileReadersRasterInterface/README.md)
 
 **Работа с принтерами**
 

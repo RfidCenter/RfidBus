@@ -61,9 +61,9 @@ namespace Readers.Gpio
 
         private static void RfidBusClientOnReceivedEvent(object sender, ReceivedEventEventArgs args)
         {
-            if (args.EventMessage is OnReaderGpiStatesChangedEvent)
+            if (args.EventMessage is ReaderGpiStatesChangedEvent)
             {
-                var message = (OnReaderGpiStatesChangedEvent)args.EventMessage;
+                var message = (ReaderGpiStatesChangedEvent)args.EventMessage;
                 Console.WriteLine($"> GPO was changed. Reader '{message.ReaderRecord.Name}'; Port: {message.GpiState.Port}; State: {message.GpiState.State}");              
             }
             

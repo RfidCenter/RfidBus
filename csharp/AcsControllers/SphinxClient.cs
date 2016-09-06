@@ -23,8 +23,8 @@ namespace AcsControllers
             var protocol = new WsCommunicationDescription();
             var config = new ParametersValues(protocol.GetClientConfiguration());
 
-            config.SetValue(ConfigConstants.PARAMETER_HOST, "127.1");
-            config.SetValue(ConfigConstants.PARAMETER_PORT, "8080");
+            config.SetValue(ConfigConstants.PARAMETER_HOST, "127.0.0.1");
+            config.SetValue(ConfigConstants.PARAMETER_PORT, 7266);
 
             _client = new RfidBusClient(protocol, config)
                       {
@@ -66,7 +66,8 @@ namespace AcsControllers
 
                         foreach (var key in getKeysResult.AllowedKeys)
                         {
-                            RemoveKeys(new []{key.IdAsString});
+                            AddKeys(new []{key.IdAsString});
+                            //RemoveKeys(new []{key.IdAsString});
                         }
                     }
                 }

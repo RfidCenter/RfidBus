@@ -4,6 +4,7 @@
 * [Получение списка принтеров](#GetPrinters)
 * [Программирование банков памяти метки](#WriteMultipleBlocksLabelElement)
 * [Программирование EPC форматами данных GS1/UNISCAN](#Gs1)
+* [Управление доступом, блокировка метки](#Access)
 * [Графическая персонализация](#Graphic)
 
 
@@ -82,9 +83,45 @@ var label = new PrintLabel
     Width = 50,
     Height = 50
 };
-var encoder = new EpcGiai96Encoder(COMPANY_PREFIX, ASSET);
-var writeEpcElement = new WriteMultipleBlocksLabelElement(encoder.Epc);
+
+var writeEpcElement = new WriteGiai96LabelElement(
+        COMPANY_PREFIX, 
+        ASSET,
+        EpcFilter.AllOthers, 
+        partition);
 label.Elements.Add(writeEpcElement);
+client.SendRequest(new EnqueuePrintLabelTask(printerRecord.Id, label));
+```
+
+<a name="Access"></a>
+Управление доступом, блокировка метки
+--------------------------
+
+За установку паролей доступа и уничтожения метки отвечают классы SetAccessPasswordElement и SetKillPasswordElement соответственно.
+Для блокировки определённых банков памяти меток используется класс LockTransponderBankElement, а при необходимости заблокировать все банки памяти метки - LockTransponderElement.
+
+
+```cs
+RfidBusClient client;
+PrinterRecord printerRecord;
+byte[] accessPassword = { 255, 255, 255, 255 };
+byte[] killPassword = { 100, 100, 100, 100 };
+ ...
+var label = new PrintLabel
+{
+    Width = 50,
+    Height = 50
+};        
+
+var accessPasswordElement = new SetAccessPasswordElement(_AccessPassword);
+label.Elements.Add(accessPasswordElement);
+var killPasswordElement = new SetKillPasswordElement(_KillPassword);
+label.Elements.Add(killPasswordElement);
+var lockTransponderElement = new LockTransponderBankElement(TransponderBank.Reserved,
+        TransponderBankLockType.Locked,
+        _AccessPassword);
+label.Elements.Add(lockTransponderElement);
+
 client.SendRequest(new EnqueuePrintLabelTask(printerRecord.Id, label));
 ```
 

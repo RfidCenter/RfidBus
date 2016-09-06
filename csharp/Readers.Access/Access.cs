@@ -5,6 +5,7 @@ using RfidBus.Primitives.Messages.Readers;
 using RfidBus.Primitives.Network;
 using RfidBus.Serializers.Ws;
 using RfidCenter.Basic.Arguments;
+using RfidCenter.Devices;
 
 namespace Readers.Access
 {

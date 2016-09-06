@@ -44,9 +44,9 @@ namespace Readers.MobileReadersInterface
         {
             var protocol = new WsCommunicationDescription();
             var config = new ParametersValues(protocol.GetClientConfiguration());
-
-            config.SetValue(ConfigConstants.PARAMETER_HOST, "demo.rfidbus.rfidcenter.ru");
-            config.SetValue(ConfigConstants.PARAMETER_PORT, 80);
+            
+            config.SetValue(ConfigConstants.PARAMETER_HOST, "127.0.0.1");
+            config.SetValue(ConfigConstants.PARAMETER_PORT, 7266);
 
             _client = new RfidBusClient(protocol, config)
             {
@@ -54,7 +54,7 @@ namespace Readers.MobileReadersInterface
             };
             _client.Connect();
 
-            if (!_client.Authorize("demo", "demo"))
+            if (!_client.Authorize("admin", "admin"))
             {
                 throw new Exception("Invalid login-password.");
             }
@@ -204,7 +204,7 @@ namespace Readers.MobileReadersInterface
 
         private static void RfidBusClientOnReceivedEvent(object sender, ReceivedEventEventArgs e)
         {
-            var message = e.EventMessage as OnReaderSpecialEvent;
+            var message = e.EventMessage as ReaderSpecialEvent;
             if (message != null)
             {
                 Console.WriteLine($"Special event. Reader: {message.Reader.Name}; eventName: {message.EventName}");

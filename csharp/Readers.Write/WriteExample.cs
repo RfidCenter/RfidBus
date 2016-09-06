@@ -6,6 +6,7 @@ using RfidBus.Primitives.Network;
 using RfidBus.Serializers.Ws;
 using RfidCenter.Basic.Arguments;
 using RfidCenter.Basic.Encode;
+using RfidCenter.Devices;
 
 namespace Readers.Write
 {

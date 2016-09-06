@@ -6,6 +6,7 @@ using RfidBus.Primitives.Messages.Readers;
 using RfidBus.Primitives.Network;
 using RfidBus.Serializers.Ws;
 using RfidCenter.Basic.Arguments;
+using RfidCenter.Devices;
 
 namespace Readers.Read
 {
@@ -14,7 +15,7 @@ namespace Readers.Read
         private static RfidBusClient _client;
         private static ushort _bankAddress = 2;
         private static int _blocksCount = 2;
-        private static readonly byte[] _accessPassword = {};
+        private static readonly byte[] _accessPassword = { 0, 0, 0, 0 };
 
         private static void Initialize()
         {

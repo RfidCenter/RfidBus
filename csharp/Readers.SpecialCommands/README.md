@@ -73,7 +73,7 @@ foreach (var readerRecord in readersResult.Readers)
 static void RfidBusClientOnReceivedEvent(object sender,
         ReceivedEventEventArgs e)
 {
-    var message = e.EventMessage as OnReaderSpecialEvent;
+    var message = e.EventMessage as ReaderSpecialEvent;
     if (message != null)
     {
         Console.WriteLine($"Special event. Reader: {message.Reader.Name};" +

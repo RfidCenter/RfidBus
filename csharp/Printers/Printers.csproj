@@ -37,17 +37,24 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>C:\Program Files (x86)\RfidCenter\RfidBusManager\DevExpress.Docs.v15.1.dll</HintPath>
     </Reference>
-    <Reference Include="RfidBus.Primitives">
-      <HintPath>C:\Program Files (x86)\RfidCenter\RfidBusManager\RfidBus.Primitives.dll</HintPath>
+    <Reference Include="RfidBus.Primitives, Version=3.5.5.0, Culture=neutral, PublicKeyToken=c77c3fea3fdc4436, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\Program Files\RfidCenter\RfidBusManager\RfidBus.Primitives.dll</HintPath>
     </Reference>
-    <Reference Include="RfidBus.Serializers.Ws">
-      <HintPath>C:\Program Files (x86)\RfidCenter\RfidBusManager\serializers\RfidBus.Serializers.Ws.dll</HintPath>
+    <Reference Include="RfidBus.Serializers.Ws, Version=3.5.1.2, Culture=neutral, PublicKeyToken=c77c3fea3fdc4436, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\Program Files\RfidCenter\RfidBusManager\serializers\RfidBus.Serializers.Ws.dll</HintPath>
     </Reference>
-    <Reference Include="RfidCenter.Basic">
-      <HintPath>C:\Program Files (x86)\RfidCenter\RfidBusManager\RfidCenter.Basic.dll</HintPath>
+    <Reference Include="RfidCenter.Basic, Version=2.4.0.6, Culture=neutral, PublicKeyToken=c77c3fea3fdc4436, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\Program Files\RfidCenter\RfidBusManager\RfidCenter.Basic.dll</HintPath>
     </Reference>
-    <Reference Include="RfidCenter.Printing">
-      <HintPath>C:\Program Files (x86)\RfidCenter\RfidBusManager\RfidCenter.Printing.dll</HintPath>
+    <Reference Include="RfidCenter.Devices">
+      <HintPath>..\..\..\..\..\Program Files\RfidCenter\RfidBusManager\RfidCenter.Devices.dll</HintPath>
+    </Reference>
+    <Reference Include="RfidCenter.Printing, Version=3.2.0.0, Culture=neutral, PublicKeyToken=c77c3fea3fdc4436, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\Program Files\RfidCenter\RfidBusManager\RfidCenter.Printing.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />

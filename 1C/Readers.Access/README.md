@@ -83,9 +83,9 @@ TransponderBank_Tid        = 2;
 TransponderBank_UserMemory = 3;
 
 TransponderBankLockType_Unlocked          = 0;
-TransponderBankLockType_PermanentLocked   = 1;
+TransponderBankLockType_PermanentUnlocked = 1;
 TransponderBankLockType_Locked            = 2;
-TransponderBankLockType_PermanentUnlocked = 3;
+TransponderBankLockType_PermanentLocked   = 3;
 
 rfidbus.LockTransponderBank(
         reader.Id,

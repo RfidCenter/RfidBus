@@ -15,7 +15,7 @@
 
 
 
-```delphi
+```bsl
 rfidbus = New COMObject("AddIn.RfidBus1cClient");
 ...
 printers = rfidbus.GetPrinters();
@@ -35,7 +35,7 @@ EndDo;
 
 Запись произвольных данных в банки памяти метки реализована через элемент WriteMultipleBlocksLabelElement.
 
-```delphi
+```bsl
 rfidbus = New COMObject("AddIn.RfidBus1cClient");
 ...
 label = New COMObject("RfidBus.PrintLabel");
@@ -72,7 +72,7 @@ printerTaskId = rfidbus.EnqueuePrintLabelTask(printer, label);
 В Шине RFID реализованы запросы для программирования банка EPC специализированными форматами, такими как SGTIN, GIAI и др.
 Пример записи средствами принтера данных  в память метки в формате GIAI-96:
 
-```delphi
+```bsl
 rfidbus = New COMObject("AddIn.RfidBus1cClient");
 ...
 label = New COMObject("RfidBus.PrintLabel");
@@ -97,7 +97,7 @@ printerTaskId = rfidbus.EnqueuePrintLabelTask(printer, label);
 За установку паролей доступа и уничтожения метки отвечают классы SetAccessPasswordElement и SetKillPasswordElement соответственно.
 Для блокировки определённых банков памяти меток используется класс LockTransponderBankElement, а при необходимости заблокировать все банки памяти метки - LockTransponderElement.
 
-```delphi
+```bsl
 rfidbus = New COMObject("AddIn.RfidBus1cClient");
 ...
 label = New COMObject("RfidBus.PrintLabel");
@@ -148,7 +148,7 @@ printerTaskId = rfidbus.EnqueuePrintLabelTask(printer, label);
 При печати на метках имеется возможность добавлять такие элементы как текст, изображения, различные геометрические фигуры, штрихкоды.
 Пример добавления текста на метку:
 
-```delphi
+```bsl
 rfidbus = New COMObject("AddIn.RfidBus1cClient");
 label = New COMObject("RfidBus.PrintLabel");
 ...
@@ -169,7 +169,7 @@ printerTaskId = rfidbus.EnqueuePrintLabelTask(printer, label);
 
 Пример добавления изображения на метку:
 
-```delphi
+```bsl
 rfidbus = New COMObject("AddIn.RfidBus1cClient");
 label = New COMObject("RfidBus.PrintLabel");
 ...
@@ -189,7 +189,7 @@ printerTaskId = rfidbus.EnqueuePrintLabelTask(printer, label);
 
 В следующем примере рассматривается добавление на метку линии, с указанием начальных и конечных координат, толщины и цвета. Добавление других геометрических фигур производится аналогичным способом, различия заключаются только в параметрах фигур, например, для описания окружности (CircleElement) следует указать координаты центра и радиус.
 
-```delphi
+```bsl
 rfidbus = New COMObject("AddIn.RfidBus1cClient");
 label = New COMObject("RfidBus.PrintLabel");
 ...
@@ -207,7 +207,7 @@ printerTaskId = rfidbus.EnqueuePrintLabelTask(printer, label);
 
 Пример добавления штрихкода на метку. В данном случае применён стандарт Code 128.
 
-```delphi
+```bsl
 rfidbus = New COMObject("AddIn.RfidBus1cClient");
 label = New COMObject("RfidBus.PrintLabel");
 ...

@@ -7,7 +7,7 @@
 и потерю (TransponderLostEvent) меток, а также изменения GPI (ReaderGpiStatesChangedEvent).
 
 
-```delphi
+```bsl
 AttachAddIn("AddIn.RfidBus1cClient");
 rfidbus = New COMObject("AddIn.RfidBus1cClient");
 reader = rfidbus.GetReaders().GetValue(0);

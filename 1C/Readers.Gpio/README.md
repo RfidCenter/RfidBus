@@ -10,7 +10,7 @@
 --------------------------------------
 Управление состоянием GPO реализовано запросом SetGpoStates, в котором передаётся массив с состояниями портов.
 
-```delphi
+```bsl
 rfidbus = New COMObject("AddIn.RfidBus1cClient");
 reader = rfidbus.GetReaders().GetValue(0);
 ...
@@ -30,7 +30,7 @@ rfidbus.SetGpoStates(reader, gpoPort);
 
 Получение текущего состояния GPI реализовано в запросе GetGpiStates.
 
-```delphi
+```bsl
 AttachAddIn("AddIn.RfidBus1cClient");
 rfidbus = New COMObject("AddIn.RfidBus1cClient");
 reader = rfidbus.GetReaders().GetValue(0);
@@ -49,7 +49,7 @@ EndDo
 считывателя, после чего в обработчике событий появится возможность фиксировать изменения
 GPI (ReaderGpiStatesChangedEvent).
 
-```delphi
+```bsl
 AttachAddIn("AddIn.RfidBus1cClient");
 rfidbus = New COMObject("AddIn.RfidBus1cClient");
 reader = rfidbus.GetReaders().GetValue(0);

@@ -5,7 +5,7 @@
 ====================================
 Запись данных в банки памяти транспондера осуществляется через запрос WriteMultipleBlocks.
 
-```delphi
+```bsl
 rfidbus = New COMObject("AddIn.RfidBus1cClient");
 reader = rfidbus.GetReaders().GetValue(0);
 ...
@@ -44,7 +44,7 @@ EndDo;
 В Шине RFID реализованы запросы для программирования банка EPC специализированными форматами, такими как SGTIN, GIAI и др.
 Запись в память метки SGTIN-96
 
-```delphi
+```bsl
 rfidbus = New COMObject("AddIn.RfidBus1cClient");
 reader = rfidbus.GetReaders().GetValue(0);
 ...

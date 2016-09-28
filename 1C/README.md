@@ -43,7 +43,7 @@
 При создании экземпляра класса необходимо передать параметры подключения: хост, порт, логин и пароль.
 Для регистрации внешних событий необходимо подключить внешнюю компоненту.
 
-```delphi
+```bsl
 Var rfidbus;
 AttachAddIn("AddIn.RfidBus1cClient");
 rfidbus = New COMObject("AddIn.RfidBus1cClient");
@@ -63,7 +63,7 @@ EndIf
 -----------------------
 Получить список доступных в Шине RFID считывателей можно через запрос загруженных считывателей GetReaders.
 
-```delphi
+```bsl
 rfidbus = New COMObject("AddIn.RfidBus1cClient");
 ...
 readers = rfidbus.GetReaders();
@@ -81,7 +81,7 @@ EndDo;
 
 Получить список доступных в Шине RFID принтеров можно через запрос загруженных принтеров GetPrinters.
 
-```delphi
+```bsl
 rfidbus = New COMObject("AddIn.RfidBus1cClient");
 ...
 For each printer In printers Do

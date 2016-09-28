@@ -10,7 +10,7 @@
 ===============
 Установка пароля на доступ к изменению данных (Access Password) реализована в запросе SetAccessPassword
 
-```delphi
+```bsl
 rfidbus = New COMObject("AddIn.RfidBus1cClient");
 ...
 reader = rfidbus.GetReaders().GetValue(0);
@@ -35,7 +35,7 @@ rfidbus.SetAccessPassword(reader.Id, tag, newAccessPassword, oldAccessPassword);
 =============
 Установка 32-битного пароля для метки, после введения которого метка навсегда прекратит обмен информацией со считывателями, реализована в запросе SetKillPassword.
 
-```delphi
+```bsl
 rfidbus = New COMObject("AddIn.RfidBus1cClient");
 ...
 reader = rfidbus.GetReaders().GetValue(0);
@@ -65,7 +65,7 @@ rfidbus.SetKillPassword(reader.Id, tag, newKillPassword, accessPassword);
 * Постоянная блокировка (PermanentLocked)
 * Постоянная разблокировка (PermanentUnlocked)
 
-```delphi
+```bsl
 rfidbus = New COMObject("AddIn.RfidBus1cClient");
 ...
 reader = rfidbus.GetReaders().GetValue(0);
@@ -100,7 +100,7 @@ rfidbus.LockTransponderBank(
 =================
 Посылка KILL-команды метке реализована в запросе KillTransponder — после его выполнения метка навсегда прекратит обмен информацией со считывателями.
 
-```delphi
+```bsl
 rfidbus = New COMObject("AddIn.RfidBus1cClient");
 ...
 reader = rfidbus.GetReaders().GetValue(0);

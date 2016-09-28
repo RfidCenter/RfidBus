@@ -12,7 +12,7 @@
 отправкой спец. команды ReinitializeTransponders (повторной инициализации меток)
 эмулятору через запрос ExecuteSpecialCommand.
 
-```delphi
+```bsl
 rfidbus = New COMObject("AddIn.RfidBus1cClient");
 ...
 readers = rfidbus.GetReaders();
@@ -36,7 +36,7 @@ EndDo;
 
 Подписка на на спец. события осуществляется через запрос SubscribeToSpecialEvent.
 
-```delphi
+```bsl
 rfidbus = New COMObject("AddIn.RfidBus1cClient");
 ...
 readers = rfidbus.GetReaders();
@@ -53,7 +53,7 @@ EndDo;
 
 Отмена подписки реализуется через запрос UnsubscribeFromSpecialEvent.
 
-```delphi
+```bsl
 rfidbus = New COMObject("AddIn.RfidBus1cClient");
 ...
 readers = rfidbus.GetReaders();

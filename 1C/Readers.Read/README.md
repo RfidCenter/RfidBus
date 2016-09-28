@@ -3,7 +3,7 @@
 
 Чтение данных из банков памяти транспондера осуществляется через запрос ReadMultipleBlocks.
 
-```delphi
+```bsl
 rfidbus = New COMObject("AddIn.RfidBus1cClient");
 reader = rfidbus.GetReaders().GetValue(0);
 ...

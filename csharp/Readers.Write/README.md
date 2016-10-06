@@ -1,3 +1,5 @@
+[![in english](http://rfidcenter.ru/img/flag-uk.svg) ENGLISH VERSION](README_EN.md)
+
 * [Программирование банков памяти метки](#WriteMultipleBlocks)
 * [Программирование EPC форматами данных GS1/UNISCAN](#WriteEpc)
 

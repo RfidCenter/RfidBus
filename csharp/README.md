@@ -1,3 +1,5 @@
+[![in english](http://rfidcenter.ru/img/flag-uk.svg) ENGLISH VERSION](README_EN.md)
+
 Работа с Шиной RFID через .NET SDK
 ==========================================
 
